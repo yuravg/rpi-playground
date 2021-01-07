@@ -1,0 +1,114 @@
+#+TITLE: My Raspberry Pi Playground
+
+* Raspberry Pi OS
+
+** XFCE desktop
+
+*** Links
+https://www.pragmaticlinux.com/2020/11/perform-a-minimal-install-on-your-raspberry-pi/
+https://www.pragmaticlinux.com/2020/11/install-the-xfce-desktop-on-your-raspberry-pi/
+
+*** Minimal install on your Raspberry PI (machine: armv7l)
+
+**** Login
+Username: pi
+
+Password: raspberry
+
+**** Configuration via 'raspi-config'
+
+- Configuring locales (en_US.UTF-8)
+- change name, password
+- setup Wi-Fi SSID, password
+
+FIXME: add keyboard setup(for rebind CapcLock, rebind | to #)
+
+#+begin_src shell-script
+sudo raspi-config
+#+end_src
+
+**** Rename user
+
+***** Add new user
+#+begin_src shell-script
+sudo reboot
+sudo adduser <newusername>
+exit
+sudo deluser --remove-home pi
+#+end_src
+
+***** Remember user name
+Modify file: /usr/share/lightdm/lightdm.conf.d/01_debian.conf
+#+begin_src shell-script
+greeter-hide-users=false # default value: 'true'
+#+end_src
+
+***** Add sudo permission for new user
+#+begin_src shell-script
+su pi
+sudo visudo
+
+visudo
+
+add:
+username ALL=(ALL:ALL) ALL
+#+end_src
+
+**** Install Xorg
+#+begin_src shell-script
+sudo apt install -y xserver-xorg xfce4 xfce4-goodies
+
+sudo systemctl get-default
+sudo systemctl set-default graphical.target
+
+sudo dpkg-reconfigure lightdm
+
+sudo update-alternatives --config x-session-manager # sure startxfce4
+sudo update-alternatives --config x-window-manager
+
+sudo nano /usr/share/lightdm/lightdm.conf.d/01_debian.conf
+
+reboot
+#+end_src
+
+Select XFCE session
+
+**** Other settings for GNU/Linux
+
+***** Install/update package manager
+#+begin_src shell-script
+sudo apt install aptitude
+sudo aptitude update
+sudo aptitude distr-upgrade
+#+end_src
+
+***** Install packages
+#+begin_src shell-script
+sudo aptitude install vim mc firefox-esr
+#+end_src
+
+***** Turn CapsLock into Control for Xorg
+Create
+#+begin_src shell-script
+xmodmap -pke > ~/.Xmodmap
+#+end_src
+
+Test
+#+begin_src shell-script
+xmodmap ~/.Xmodmap
+#+end_src
+
+Add to ~/.Xmodmap:
+#+begin_src shell-script
+clear lock
+clear control
+keycode 66 = Control_L
+add control = Control_L Control_R
+#+end_src
+
+**** Other settings for RPI
+***** Display
+If your display has a black border uncoment in '/boot/config.txt'
+#+begin_src shell-script
+disable_overscan=1
+#+end_src
