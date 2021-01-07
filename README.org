@@ -32,7 +32,10 @@ sudo raspi-config
 ***** Add new user
 #+begin_src shell-script
 sudo reboot
+# add user
 sudo adduser <newusername>
+# set password
+$ sudo passwd <username>
 exit
 sudo deluser --remove-home pi
 #+end_src
@@ -112,3 +115,51 @@ If your display has a black border uncoment in '/boot/config.txt'
 #+begin_src shell-script
 disable_overscan=1
 #+end_src
+
+* Kali
+** Download
+[[https://www.offensive-security.com/kali-linux-arm-images][Kali Linux RaspberryPi 2 (v1.2), 3 and 4 (64-Bit) (img.xz)]] (machine: aarch64)
+
+** Login
+
+NOTE: for version 2020.4:
+
+username: kali
+
+password: kali
+
+kali user group: kali dialout cdrom sudo audio dip video plugdev netdev bluetooth lpadmin scanner
+
+
+** Add new user
+- add new user
+- Add sudo permission for new user
+- change root password
+- remove default user
+- Turn CapsLock into Control for Xorg
+
+** Connect to WiFi from Terminal
+#+begin_src shell-script
+nmtui
+#+end_src
+
+** Install/update package manager
+#+begin_src shell-script
+sudo apt update
+sudo apt install aptitude
+sudo aptitude update
+sudo aptitude full-upgrade
+#+end_src
+
+** Install additional packages
+#+begin_src shell-script
+sudo aptitude install htop emacs mc
+#+end_src
+
+** Setup
+*** Keyboard
+- add layout, add shortcut
+- (generic 105-key PC(intl.))
+
+*** Time
+- set timezone, time format
