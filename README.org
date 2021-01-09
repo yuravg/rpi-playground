@@ -116,6 +116,11 @@ If your display has a black border uncoment in '/boot/config.txt'
 disable_overscan=1
 #+end_src
 
+***** Display resolution
+supported format:
+2048x1080
+2560x1440 -- [[https://www.enricozini.org/blog/2019/himblick/raspberry-pi-4-loses-wifi-at-2560x1440-screen-resolution/][not supported]]
+
 * Kali
 ** Download
 [[https://www.offensive-security.com/kali-linux-arm-images][Kali Linux RaspberryPi 2 (v1.2), 3 and 4 (64-Bit) (img.xz)]] (machine: aarch64)
