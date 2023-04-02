@@ -2,6 +2,33 @@
 
 * Raspberry Pi OS
 
+
+** Kodi
+
+https://steemit.com/howto/@guzman/youtube-app-error-on-kodi-how-to-fix-it
+https://www.linuxbabe.com/raspberry-pi/kodi-youtube
+
+*** Run Kodi on Startup
+
+To start Kodi at start-up should create file
+#+begin_src shell-script
+sudo touch /etc/xdg/autostart/kodi.desktop
+#+end_src
+
+Add content
+#+begin_src shell-script
+[Desktop Entry]
+Name=KodiStartup
+Exec=/usr/bin/kodi
+#+end_src
+
+Set permission
+#+begin_src shell-script
+sudo chmod 644 /etc/xdg/autostart/kodi.desktop
+#+end_src
+
+Reboot
+
 ** XFCE desktop
 
 *** Links
@@ -134,7 +161,6 @@ username: kali
 password: kali
 
 kali user group: kali dialout cdrom sudo audio dip video plugdev netdev bluetooth lpadmin scanner
-
 
 ** Add new user
 - add new user
