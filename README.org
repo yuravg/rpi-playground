@@ -3,6 +3,19 @@
 * Raspberry Pi OS
 
 
+** Install RDP server
+
+#+begin_src shell-script
+# Install RDP package
+sudo aptitude install xrdp
+
+# Chenck status RDP service
+systemctl show -p SubState --value xrdp
+
+# Add user permission
+sudo usermod -a -G xrdp, ssl-cert <UserName>
+#+end_src
+
 ** Kodi
 
 https://steemit.com/howto/@guzman/youtube-app-error-on-kodi-how-to-fix-it
