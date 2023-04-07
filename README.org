@@ -2,6 +2,17 @@
 
 * Raspberry Pi OS
 
+** Common
+
+*** Useful programs
+pinout
+
+*** Aliases
+
+Add file ~/.bash_aliases
+
+[[file:.bash_aliases][bash_aliases]]
+
 *** BIOS
 
 config.txt
