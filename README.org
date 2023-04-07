@@ -2,6 +2,15 @@
 
 * Raspberry Pi OS
 
+*** BIOS
+
+config.txt
+
+Examples:
+
+- [[file:rpi3b+.config.txt][Raspberry Pi OS]]
+- [[file:config-examples/kali.config.txt][Kali config.txt]]
+
 
 ** Install RDP server
 
