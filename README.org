@@ -47,6 +47,38 @@ systemctl show -p SubState --value xrdp
 sudo usermod -a -G xrdp, ssl-cert <UserName>
 #+end_src
 
+** SSH
+
+- enable SSH via 'Raspberry Pi Configuration
+
+- run commands
+
+#+begin_src shell-script
+sudo systemctl enable ssh
+sudo systemctl start ssh
+#+end_src
+
+- Edit ssh configuration, /etc/ssh/sshd_config (permission: 644)
+
+Check/edit options:
+#+begin_src text
+PermitRootLogin no
+MaxSessions 10
+#+end_src
+
+#+begin_src shell-script
+sudo systemctl restart ssh
+#+end_src
+
+- Copy pub-key
+
+#+begin_src shell-script
+ssh-copy-id -i ~/.ssh/<key_name>.pub <User-Name>@<IP-address>
+#+end_src
+
+*** Other remote configurations
+https://www.raspberrypi.com/documentation/computers/remote-access.html
+
 ** Kodi
 
 https://steemit.com/howto/@guzman/youtube-app-error-on-kodi-how-to-fix-it
