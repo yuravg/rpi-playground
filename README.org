@@ -22,6 +22,17 @@ Examples:
 - [[file:rpi3b+.config.txt][Raspberry Pi OS]]
 - [[file:config-examples/kali.config.txt][Kali config.txt]]
 
+** Useful packages
+
+#+begin_src shell-script
+sudo apt install aptitude
+sudo aptitude update
+sudo aptitude full-upgrade
+#+end_src
+
+#+begin_src shell-script
+sudo aptitude install mc vim
+#+end_src
 
 ** Install RDP server
 
