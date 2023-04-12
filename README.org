@@ -1,28 +1,9 @@
 #+TITLE: My Raspberry Pi Playground
 
-* Raspberry Pi OS
+* Common
 
-** Common
-
-*** Useful programs
+** Useful programs
 pinout
-
-*** Aliases
-
-Add file ~/.bash_aliases
-
-[[file:.bash_aliases][bash_aliases]]
-
-*** BIOS
-
-config.txt
-
-Examples:
-
-- [[file:rpi3b+.config.txt][Raspberry Pi OS]]
-- [[file:config-examples/kali.config.txt][Kali config.txt]]
-
-** Useful packages
 
 #+begin_src shell-script
 sudo apt install aptitude
@@ -34,18 +15,20 @@ sudo aptitude full-upgrade
 sudo aptitude install mc vim
 #+end_src
 
-** Install RDP server
+** Aliases
 
-#+begin_src shell-script
-# Install RDP package
-sudo aptitude install xrdp
+Add file ~/.bash_aliases
 
-# Chenck status RDP service
-systemctl show -p SubState --value xrdp
+[[file:.bash_aliases][bash_aliases]]
 
-# Add user permission
-sudo usermod -a -G xrdp, ssl-cert <UserName>
-#+end_src
+** BIOS
+
+[[https://www.raspberrypi.com/documentation/computers/config_txt.html][config.txt]]
+
+Examples:
+
+- [[file:rpi3b+.config.txt][Raspberry Pi OS]]
+- [[file:config-examples/kali.config.txt][Kali config.txt]]
 
 ** SSH
 
@@ -79,6 +62,19 @@ ssh-copy-id -i ~/.ssh/<key_name>.pub <User-Name>@<IP-address>
 *** Other remote configurations
 https://www.raspberrypi.com/documentation/computers/remote-access.html
 
+** Install RDP server
+
+#+begin_src shell-script
+# Install RDP package
+sudo aptitude install xrdp
+
+# Chenck status RDP service
+systemctl show -p SubState --value xrdp
+
+# Add user permission
+sudo usermod -a -G xrdp, ssl-cert <UserName>
+#+end_src
+
 ** Kodi
 
 https://steemit.com/howto/@guzman/youtube-app-error-on-kodi-how-to-fix-it
@@ -104,6 +100,8 @@ sudo chmod 644 /etc/xdg/autostart/kodi.desktop
 #+end_src
 
 Reboot
+
+* Raspberry Pi OS
 
 ** XFCE desktop
 
