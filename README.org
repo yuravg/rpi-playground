@@ -49,6 +49,8 @@ sudo systemctl start ssh
 
 - Edit ssh configuration, /etc/ssh/sshd_config (permission: 644)
 
+TODO: https://tldp.org/LDP/solrhe/Securing-Optimizing-Linux-RH-Edition-v1.3/chap15sec122.html
+
 Check/edit options:
 #+begin_src text
 PermitRootLogin no
