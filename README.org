@@ -2,8 +2,13 @@
 
 * Common
 
-** Useful programs
+** Applications
+
+RPI-board
+
+#+begin_src txt
 pinout
+#+end_src
 
 #+begin_src shell-script
 sudo apt install aptitude
@@ -20,6 +25,7 @@ sudo aptitude install mc vim
 Add file ~/.bash_aliases
 
 [[file:.bash_aliases][bash_aliases]]
+([[https://raw.githubusercontent.com/yuravg/rpi-playground/develop/.bash_aliases][raw]])
 
 ** BIOS
 
@@ -81,6 +87,10 @@ https://steemit.com/howto/@guzman/youtube-app-error-on-kodi-how-to-fix-it
 https://www.linuxbabe.com/raspberry-pi/kodi-youtube
 
 *** Run Kodi on Startup
+
+#+begin_src shell-script
+sudo aptitude install kodi
+#+end_src
 
 To start Kodi at start-up should create file
 #+begin_src shell-script
