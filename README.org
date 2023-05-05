@@ -27,7 +27,7 @@ Add file ~/.bash_aliases
 
 Examples:
 
-- [[file:rpi3b+.config.txt][Raspberry Pi OS]]
+- [[file:config-examples/rpi3b+.config.txt][Raspberry Pi OS]]
 - [[file:config-examples/kali.config.txt][Kali config.txt]]
 
 ** SSH
