@@ -278,3 +278,11 @@ sudo aptitude install htop emacs mc
 
 *** Time
 - set timezone, time format
+
+* Issues
+
+** Unable to boot fresh installation:
+If fresh installation of RPI board fails to boot with the latest message like this:
+=[OK] Started Load/Save RF Kill Switch Status.=
+The solution to this problem may be disconnecting any external devices, including any connected
+or powered by GPIO, and reboot the board.
